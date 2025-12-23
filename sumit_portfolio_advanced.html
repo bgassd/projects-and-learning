@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sumit Tiwari - HR Analytics, Finance, Digital Marketing, Web Development, Data Analytics Expert">
+    <meta name="keywords" content="HR Analytics, Finance, Digital Marketing, Web Development, Data Analytics">
+    <meta name="author" content="Sumit Tiwari">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Sumit Tiwari - Multi-skilled Professional">
+    <meta property="og:description" content="Expert in HR Analytics, Finance, Digital Marketing, Web Development & Data Analytics">
+    <meta property="og:type" content="website">
+    <title>Sumit Tiwari - HR Analytics | Finance | Digital Marketing | Web Development</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0066cc;
+            --secondary: #00d4ff;
+            --dark: #0a0e27;
+            --darker: #050812;
+            --light: #f0f4ff;
+            --accent: #ff006e;
+            --success: #00d084;
+            --warning: #ffa500;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
+            color: #e0e0e0;
+            line-height: 1.8;
+            letter-spacing: 0.5px;
+        }
+
+        /* HEADER & NAV */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(10, 14, 39, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid var(--secondary);
+            box-shadow: 0 4px 20px rgba(0, 212, 255, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 3rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        nav > h1 {
+            font-size: 2rem;
+            background: linear-gradient(135deg, var(--secondary) 0%, #00a8ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        nav a:hover {
+            color: var(--secondary);
+        }
+
+        /* HERO SECTION */
+        section#hero {
+            margin-top: 80px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem;
+            background: linear-gradient(135deg, rgba(0, 102, 204, 0.05) 0%, rgba(0, 212, 255, 0.05) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        section#hero::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            top: -100px;
+            right: -100px;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(30px, 30px); }
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+            max-width: 1000px;
+        }
+
+        .hero-avatar {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            margin: 0 auto 2rem;
+            box-shadow: 0 10px 40px rgba(0, 212, 255, 0.3);
+            font-weight: 900;
+        }
+
+        section#hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--secondary) 0%, #00a8ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fadeInDown 1s ease;
+        }
+
+        section#hero h2 {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        section#hero p {
+            font-size: 1.1rem;
+            color: #b0b0b0;
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        button, a.btn {
+            padding: 1rem 2.5rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+            color: var(--darker);
+            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(0, 212, 255, 0.5);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--secondary);
+            color: var(--darker);
+            transform: translateY(-3px);
+        }
+
+        /* MAIN CONTENT */
+        main {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 5rem 3rem;
+            margin: 2rem 0;
+            border-radius: 20px;
+            background: rgba(20, 25, 50, 0.8);
+            border: 1px solid rgba(0, 212, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        section h2 {
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            background: linear-gradient(135deg, var(--secondary) 0%, #00a8ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary);
+        }
+
+        /* ABOUT SECTION */
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            color: #c0c0c0;
+            line-height: 1.9;
+        }
+
+        .about-highlights {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .highlight-card {
+            background: rgba(0, 212, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border-left: 4px solid var(--secondary);
+            transition: all 0.3s ease;
+        }
+
+        .highlight-card:hover {
+            background: rgba(0, 212, 255, 0.1);
+            transform: translateX(10px);
+        }
+
+        .highlight-card strong {
+            color: var(--secondary);
+        }
+
+        /* SKILLS SECTION */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: rgba(0, 102, 204, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .skill-category:hover {
+            border-color: var(--secondary);
+            background: rgba(0, 212, 255, 0.15);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.2);
+        }
+
+        .skill-category h4 {
+            font-size: 1.3rem;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .skill-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-item label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            color: #e0e0e0;
+            font-weight: 500;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 100%);
+            border-radius: 10px;
+            animation: fillProgress 1.5s ease forwards;
+            opacity: 0;
+        }
+
+        @keyframes fillProgress {
+            0% { width: 0; opacity: 1; }
+            100% { opacity: 1; }
+        }
+
+        /* PROJECTS SECTION */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .project-card {
+            background: rgba(0, 102, 204, 0.08);
+            border: 1px solid rgba(0, 212, 255, 0.15);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            border-color: var(--secondary);
+            background: rgba(0, 212, 255, 0.12);
+            transform: translateY(-15px);
+            box-shadow: 0 20px 50px rgba(0, 212, 255, 0.25);
+        }
+
+        .project-header {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(0, 102, 204, 0.1) 100%);
+            padding: 2rem;
+            border-bottom: 2px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .project-header h4 {
+            color: var(--secondary);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-body {
+            padding: 2rem;
+            flex: 1;
+        }
+
+        .project-body p {
+            color: #a0a0a0;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tag {
+            background: rgba(0, 212, 255, 0.2);
+            color: var(--secondary);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+        }
+
+        .project-link {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .project-link:hover {
+            gap: 1rem;
+        }
+
+        /* EXPERTISE SECTION */
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .expertise-box {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(0, 102, 204, 0.05) 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 2px solid rgba(0, 212, 255, 0.2);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .expertise-box:hover {
+            border-color: var(--secondary);
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.2) 0%, rgba(0, 102, 204, 0.1) 100%);
+            transform: translateY(-10px);
+        }
+
+        .expertise-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .expertise-box h4 {
+            color: var(--secondary);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .expertise-box p {
+            color: #a0a0a0;
+            font-size: 0.95rem;
+        }
+
+        /* TOOLS SECTION */
+        .tools-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .tool-card {
+            background: rgba(0, 102, 204, 0.1);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .tool-card:hover {
+            background: rgba(0, 212, 255, 0.15);
+            border-color: var(--secondary);
+            transform: scale(1.05);
+        }
+
+        .tool-name {
+            color: var(--secondary);
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        /* CONTACT SECTION */
+        .contact-container {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-container p {
+            font-size: 1.1rem;
+            color: #a0a0a0;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+        }
+
+        .contact-link {
+            padding: 1rem 2rem;
+            background: rgba(0, 212, 255, 0.1);
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .contact-link:hover {
+            background: var(--secondary);
+            color: var(--darker);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+        }
+
+        /* FOOTER */
+        footer {
+            background: rgba(5, 8, 18, 0.9);
+            border-top: 2px solid rgba(0, 212, 255, 0.2);
+            padding: 2rem;
+            text-align: center;
+            color: #808080;
+            margin-top: 3rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        footer a {
+            color: var(--secondary);
+            text-decoration: none;
+        }
+
+        /* ANIMATIONS */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem;
+                flex-wrap: wrap;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            section#hero h1 {
+                font-size: 2.5rem;
+            }
+
+            section#hero h2 {
+                font-size: 1.5rem;
+            }
+
+            section {
+                padding: 3rem 1.5rem;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid, .projects-grid, .expertise-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-highlights {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            button, a.btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER NAV -->
+<header role="banner">
+    <nav aria-label="Main Navigation">
+        <h1>Sumit Tiwari</h1>
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#expertise">Expertise</a></li>
+            <li><a href="#tools">Tools</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- MAIN CONTENT -->
+<main role="main">
+
+    <!-- HERO SECTION -->
+    <section id="hero" role="region" aria-label="Hero Section">
+        <article class="hero-content">
+            <div class="hero-avatar">ST</div>
+            <h1>Sumit Tiwari</h1>
+            <h2>Multi-Skilled Professional | Data-Driven Expert</h2>
+            <p>
+                Specialized in HR Analytics, Finance, Digital Marketing, Web Development, 
+                Data Analytics, Automation, and Project Management. Transforming business 
+                challenges into strategic solutions through data-driven insights and modern 
+                technology.
+            </p>
+            <div class="cta-buttons">
+                <a href="#projects" class="btn btn-primary">View My Work</a>
+                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+            </div>
+        </article>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" role="region" aria-label="About Section">
+        <h2>About Me</h2>
+        <article class="about-container">
+            <div class="about-text">
+                <p>
+                    <strong>Welcome!</strong> I'm a versatile professional with expertise spanning 
+                    across HR analytics, financial management, digital marketing strategies, 
+                    web development, and data analytics.
+                </p>
+                <p>
+                    With <time datetime="P7Y">7+ years of experience</time>, I've successfully 
+                    led multiple high-impact projects, optimized business processes, and 
+                    delivered data-driven solutions that drive measurable results.
+                </p>
+                <p>
+                    My passion lies in leveraging cutting-edge technologies and analytical 
+                    frameworks to solve complex business problems. I believe in continuous 
+                    learning and staying updated with industry trends.
+                </p>
+                <p>
+                    When I'm not working, I contribute to open-source projects, mentor aspiring 
+                    professionals, and explore emerging technologies in AI and machine learning.
+                </p>
+            </div>
+            <aside class="about-highlights">
+                <article class="highlight-card">
+                    <strong>HR Analytics Expert</strong>
+                    <p>Workforce planning, talent analytics, and organizational development</p>
+                </article>
+                <article class="highlight-card">
+                    <strong>Finance Professional</strong>
+                    <p>Financial analysis, budgeting, and strategic planning</p>
+                </article>
+                <article class="highlight-card">
+                    <strong>Digital Marketing Specialist</strong>
+                    <p>SEO, SEM, content strategy, and campaign optimization</p>
+                </article>
+                <article class="highlight-card">
+                    <strong>Full-Stack Developer</strong>
+                    <p>Web development, responsive design, and scalable applications</p>
+                </article>
+                <article class="highlight-card">
+                    <strong>Data Analytics Pro</strong>
+                    <p>Business intelligence, data visualization, and predictive analytics</p>
+                </article>
+                <article class="highlight-card">
+                    <strong>Automation Expert</strong>
+                    <p>Process automation, RPA, and workflow optimization</p>
+                </article>
+            </aside>
+        </article>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" role="region" aria-label="Skills Section">
+        <h2>Core Skills & Proficiencies</h2>
+        <div class="skills-grid">
+            <!-- HR Analytics -->
+            <article class="skill-category">
+                <h4>👥 HR Analytics</h4>
+                <div class="skill-item">
+                    <label>Workforce Planning <span>95%</span></label>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 95%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <label>Talent Analytics <span>92%</span></label>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 92%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <label>HR Metrics & KPIs <span>88%</span></label>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 88%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <label>Employee Development <span>85%</span></label>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 85%"></div></div>
+                </div>
+            </article>
+
+            <!-- Finance -->
+            <article class="skill-category">
+                <h4>💰 Finance</h4>
+                <div class="skill-item">
+                    <label>Financial Analysis <span>90%</span></label>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 90%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <label>Budgeting & Forecasting <span>88%</span></label>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 88%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <label>Financial Reporting <span>87%</span></label>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 87%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <label>Risk Management <span>85%</span></label>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 85%"></div></div>
+                </div>
+            </article>
+
+            <!-- Digital Marketing -->
+            <article class="skill-category">
+                <h4>📱 Digital Marketing</h4>
+                <div class="skill-item">
+                    <label>SEO & SEM <span>93%</span></label>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 93%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <label>Content Strategy <span>91%</span></label>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 91%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <label>Social Media Marketing <span>89%</span></label>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 89%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <label>Email Marketing <span>87%</span></label>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 87%"></div></div>
+                </div>
+            </article>
+
+            <!-- Web Development -->
+            <article class="skill-category">
+                <h4>💻 Web Development</h4>
+                <div class="skill-item">
+                    <label>Frontend Development <span>94%</span></label>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 94%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <label>Backend Development <span>91%</span></label>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 91%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <label>React & JavaScript <span>93%</span></label>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 93%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <label>Database Design <span>88%</span></label>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 88%"></div></div>
+                </div>
+            </article>
+
+            <!-- Data Analytics -->
+            <article class="skill-category">
+                <h4>📊 Data Analytics</h4>
+                <div class="skill-item">
+                    <label>Data Visualization <span>95%</span></label>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 95%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <label>Statistical Analysis <span>92%</span></label>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 92%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <label>Python & SQL <span>93%</span></label>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 93%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <label>Business Intelligence <span>90%</span></label>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 90%"></div></div>
+                </div>
+            </article>
+
+            <!-- Automation & Project Management -->
+            <article class="skill-category">
+                <h4>⚙️ Automation & Project Mgmt</h4>
+                <div class="skill-item">
+                    <label>Process Automation <span>92%</span></label>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 92%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <label>Project Management <span>90%</span></label>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 90%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <label>RPA & Workflow <span>88%</span></label>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 88%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <label>Agile & Scrum <span>87%</span></label>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 87%"></div></div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" role="region" aria-label="Projects Section">
+        <h2>Featured Projects</h2>
+        <div class="projects-grid">
+            <!-- Project 1 -->
+            <article class="project-card">
+                <header class="project-header">
+                    <h4>HR Analytics Dashboard</h4>
+                    <p>Enterprise-Level Solution</p>
+                </header>
+                <div class="project-body">
+                    <p>
+                        Developed a comprehensive HR analytics platform that tracks workforce 
+                        metrics, talent pipeline, and employee performance. Features real-time 
+                        dashboards and predictive analytics for talent planning.
+                    </p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">Tableau</span>
+                    </div>
+                    <a href="#" class="project-link">View Project →</a>
+                </div>
+            </article>
+
+            <!-- Project 2 -->
+            <article class="project-card">
+                <header class="project-header">
+                    <h4>Financial Management System</h4>
+                    <p>Budget & Forecast Tool</p>
+                </header>
+                <div class="project-body">
+                    <p>
+                        Complete financial platform for budgeting, forecasting, and expense 
+                        management. Automated reporting and compliance tracking with multi-currency 
+                        support and advanced analytics.
+                    </p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">Vue.js</span>
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">D3.js</span>
+                    </div>
+                    <a href="#" class="project-link">View Project →</a>
+                </div>
+            </article>
+
+            <!-- Project 3 -->
+            <article class="project-card">
+                <header class="project-header">
+                    <h4>Digital Marketing Suite</h4>
+                    <p>Campaign Management Platform</p>
+                </header>
+                <div class="project-body">
+                    <p>
+                        Integrated platform for managing multi-channel digital marketing campaigns. 
+                        Includes email automation, social media scheduling, and comprehensive 
+                        analytics reporting.
+                    </p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Next.js</span>
+                        <span class="tech-tag">Firebase</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">Stripe</span>
+                    </div>
+                    <a href="#" class="project-link">View Project →</a>
+                </div>
+            </article>
+
+            <!-- Project 4 -->
+            <article class="project-card">
+                <header class="project-header">
+                    <h4>Data Analytics Platform</h4>
+                    <p>Business Intelligence Tool</p>
+                </header>
+                <div class="project-body">
+                    <p>
+                        Advanced BI platform with machine learning capabilities. Real-time data 
+                        processing, custom dashboards, and predictive modeling for data-driven 
+                        decision making.
+                    </p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">TensorFlow</span>
+                        <span class="tech-tag">Power BI</span>
+                        <span class="tech-tag">SQL</span>
+                    </div>
+                    <a href="#" class="project-link">View Project →</a>
+                </div>
+            </article>
+
+            <!-- Project 5 -->
+            <article class="project-card">
+                <header class="project-header">
+                    <h4>Process Automation Engine</h4>
+                    <p>Workflow & RPA Solution</p>
+                </header>
+                <div class="project-body">
+                    <p>
+                        Enterprise automation platform reducing manual processes by 80%. 
+                        Supports multiple integrations, custom workflows, and compliance auditing 
+                        for regulated industries.
+                    </p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">UiPath</span>
+                        <span class="tech-tag">REST APIs</span>
+                        <span class="tech-tag">AWS</span>
+                    </div>
+                    <a href="#" class="project-link">View Project →</a>
+                </div>
+            </article>
+
+            <!-- Project 6 -->
+            <article class="project-card">
+                <header class="project-header">
+                    <h4>Project Management Portal</h4>
+                    <p>Agile Team Collaboration</p>
+                </header>
+                <div class="project-body">
+                    <p>
+                        Collaborative project management tool with Agile/Scrum capabilities. 
+                        Real-time team collaboration, resource allocation, and project analytics 
+                        for seamless execution.
+                    </p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">WebSocket</span>
+                        <span class="tech-tag">MongoDB</span>
+                    </div>
+                    <a href="#" class="project-link">View Project →</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- EXPERTISE SECTION -->
+    <section id="expertise" role="region" aria-label="Expertise Section">
+        <h2>Areas of Expertise</h2>
+        <div class="expertise-grid">
+            <article class="expertise-box">
+                <div class="expertise-icon">👥</div>
+                <h4>HR Analytics</h4>
+                <p>
+                    Workforce planning, talent analytics, performance metrics, 
+                    organizational development, and strategic HR insights.
+                </p>
+            </article>
+            <article class="expertise-box">
+                <div class="expertise-icon">💰</div>
+                <h4>Finance</h4>
+                <p>
+                    Financial analysis, budgeting, forecasting, expense management, 
+                    and strategic financial planning.
+                </p>
+            </article>
+            <article class="expertise-box">
+                <div class="expertise-icon">📱</div>
+                <h4>Digital Marketing</h4>
+                <p>
+                    SEO, SEM, content marketing, social media strategy, email campaigns, 
+                    and digital brand building.
+                </p>
+            </article>
+            <article class="expertise-box">
+                <div class="expertise-icon">💻</div>
+                <h4>Web Development</h4>
+                <p>
+                    Full-stack development, responsive design, progressive web apps, 
+                    scalable architecture, and performance optimization.
+                </p>
+            </article>
+            <article class="expertise-box">
+                <div class="expertise-icon">📊</div>
+                <h4>Data Analytics</h4>
+                <p>
+                    Data visualization, statistical analysis, predictive modeling, 
+                    business intelligence, and data-driven decision making.
+                </p>
+            </article>
+            <article class="expertise-box">
+                <div class="expertise-icon">⚙️</div>
+                <h4>Automation</h4>
+                <p>
+                    Process automation, RPA, workflow optimization, integration solutions, 
+                    and efficiency improvements.
+                </p>
+            </article>
+            <article class="expertise-box">
+                <div class="expertise-icon">📈</div>
+                <h4>Project Management</h4>
+                <p>
+                    Agile/Scrum, resource planning, risk management, stakeholder communication, 
+                    and delivery excellence.
+                </p>
+            </article>
+            <article class="expertise-box">
+                <div class="expertise-icon">🎯</div>
+                <h4>Strategic Planning</h4>
+                <p>
+                    Business strategy, technology roadmaps, transformation initiatives, 
+                    and growth optimization.
+                </p>
+            </article>
+        </div>
+    </section>
+
+    <!-- TOOLS SECTION -->
+    <section id="tools" role="region" aria-label="Tools and Technologies">
+        <h2>Tools & Technologies</h2>
+        <div class="tools-container">
+            <!-- Programming Languages -->
+            <details open>
+                <summary style="cursor: pointer; color: var(--secondary); font-weight: 600; margin-bottom: 1rem;">
+                    <strong>🔤 Programming Languages</strong>
+                </summary>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                    <div class="tool-card"><span>Python</span><div class="tool-name">Advanced</div></div>
+                    <div class="tool-card"><span>JavaScript</span><div class="tool-name">Expert</div></div>
+                    <div class="tool-card"><span>SQL</span><div class="tool-name">Advanced</div></div>
+                    <div class="tool-card"><span>HTML/CSS</span><div class="tool-name">Expert</div></div>
+                </div>
+            </details>
+
+            <!-- Frontend Frameworks -->
+            <details open>
+                <summary style="cursor: pointer; color: var(--secondary); font-weight: 600; margin-bottom: 1rem;">
+                    <strong>🎨 Frontend Frameworks</strong>
+                </summary>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                    <div class="tool-card"><span>React.js</span><div class="tool-name">Expert</div></div>
+                    <div class="tool-card"><span>Vue.js</span><div class="tool-name">Advanced</div></div>
+                    <div class="tool-card"><span>Next.js</span><div class="tool-name">Advanced</div></div>
+                    <div class="tool-card"><span>Tailwind CSS</span><div class="tool-name">Expert</div></div>
+                </div>
+            </details>
+
+            <!-- Backend & Databases -->
+            <details open>
+                <summary style="cursor: pointer; color: var(--secondary); font-weight: 600; margin-bottom: 1rem;">
+                    <strong>⚙️ Backend & Databases</strong>
+                </summary>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                    <div class="tool-card"><span>Node.js</span><div class="tool-name">Expert</div></div>
+                    <div class="tool-card"><span>PostgreSQL</span><div class="tool-name">Advanced</div></div>
+                    <div class="tool-card"><span>MongoDB</span><div class="tool-name">Advanced</div></div>
+                    <div class="tool-card"><span>Firebase</span><div class="tool-name">Advanced</div></div>
+                </div>
+            </details>
+
+            <!-- Analytics Tools -->
+            <details open>
+                <summary style="cursor: pointer; color: var(--secondary); font-weight: 600; margin-bottom: 1rem;">
+                    <strong>📊 Analytics Tools</strong>
+                </summary>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                    <div class="tool-card"><span>Tableau</span><div class="tool-name">Expert</div></div>
+                    <div class="tool-card"><span>Power BI</span><div class="tool-name">Advanced</div></div>
+                    <div class="tool-card"><span>Google Analytics</span><div class="tool-name">Expert</div></div>
+                    <div class="tool-card"><span>Excel/VBA</span><div class="tool-name">Expert</div></div>
+                </div>
+            </details>
+
+            <!-- Marketing Tools -->
+            <details open>
+                <summary style="cursor: pointer; color: var(--secondary); font-weight: 600; margin-bottom: 1rem;">
+                    <strong>📱 Marketing Tools</strong>
+                </summary>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                    <div class="tool-card"><span>Google Ads</span><div class="tool-name">Expert</div></div>
+                    <div class="tool-card"><span>HubSpot</span><div class="tool-name">Advanced</div></div>
+                    <div class="tool-card"><span>Mailchimp</span><div class="tool-name">Expert</div></div>
+                    <div class="tool-card"><span>SEMrush</span><div class="tool-name">Advanced</div></div>
+                </div>
+            </details>
+
+            <!-- Cloud & DevOps -->
+            <details open>
+                <summary style="cursor: pointer; color: var(--secondary); font-weight: 600; margin-bottom: 1rem;">
+                    <strong>☁️ Cloud & DevOps</strong>
+                </summary>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                    <div class="tool-card"><span>AWS</span><div class="tool-name">Advanced</div></div>
+                    <div class="tool-card"><span>Docker</span><div class="tool-name">Advanced</div></div>
+                    <div class="tool-card"><span>Git</span><div class="tool-name">Expert</div></div>
+                    <div class="tool-card"><span>CI/CD</span><div class="tool-name">Advanced</div></div>
+                </div>
+            </details>
+
+            <!-- Automation Tools -->
+            <details open>
+                <summary style="cursor: pointer; color: var(--secondary); font-weight: 600; margin-bottom: 1rem;">
+                    <strong>🤖 Automation Tools</strong>
+                </summary>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                    <div class="tool-card"><span>UiPath</span><div class="tool-name">Advanced</div></div>
+                    <div class="tool-card"><span>Zapier</span><div class="tool-name">Expert</div></div>
+                    <div class="tool-card"><span>Integromat</span><div class="tool-name">Advanced</div></div>
+                    <div class="tool-card"><span>Python Automation</span><div class="tool-name">Expert</div></div>
+                </div>
+            </details>
+
+            <!-- Project Management -->
+            <details open>
+                <summary style="cursor: pointer; color: var(--secondary); font-weight: 600; margin-bottom: 1rem;">
+                    <strong>📋 Project Management</strong>
+                </summary>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                    <div class="tool-card"><span>Jira</span><div class="tool-name">Expert</div></div>
+                    <div class="tool-card"><span>Asana</span><div class="tool-name">Advanced</div></div>
+                    <div class="tool-card"><span>Monday.com</span><div class="tool-name">Advanced</div></div>
+                    <div class="tool-card"><span>Trello</span><div class="tool-name">Expert</div></div>
+                </div>
+            </details>
+
+            <!-- Business Tools -->
+            <details open>
+                <summary style="cursor: pointer; color: var(--secondary); font-weight: 600; margin-bottom: 1rem;">
+                    <strong>💼 Business Tools</strong>
+                </summary>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                    <div class="tool-card"><span>Salesforce</span><div class="tool-name">Advanced</div></div>
+                    <div class="tool-card"><span>SAP</span><div class="tool-name">Advanced</div></div>
+                    <div class="tool-card"><span>Oracle</span><div class="tool-name">Advanced</div></div>
+                    <div class="tool-card"><span>Workday</span><div class="tool-name">Advanced</div></div>
+                </div>
+            </details>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" role="region" aria-label="Contact Section">
+        <h2>Let's Connect</h2>
+        <article class="contact-container">
+            <p>
+                I'm always interested in new opportunities, collaborations, and interesting projects. 
+                Whether you have a question or just want to say hello, feel free to reach out!
+            </p>
+            <p>
+                <strong>Email:</strong> <a href="mailto:sumit@example.com" style="color: var(--secondary);">sumit@example.com</a>
+            </p>
+            <p>
+                <strong>Phone:</strong> <a href="tel:+919876543210" style="color: var(--secondary);">+91 9876543210</a>
+            </p>
+            <div class="contact-links">
+                <a href="https://linkedin.com" class="contact-link" target="_blank" rel="noopener noreferrer">
+                    <span>💼</span> LinkedIn
+                </a>
+                <a href="https://github.com" class="contact-link" target="_blank" rel="noopener noreferrer">
+                    <span>💻</span> GitHub
+                </a>
+                <a href="https://twitter.com" class="contact-link" target="_blank" rel="noopener noreferrer">
+                    <span>𝕏</span> Twitter
+                </a>
+                <a href="https://instagram.com" class="contact-link" target="_blank" rel="noopener noreferrer">
+                    <span>📸</span> Instagram
+                </a>
+                <a href="https://dribbble.com" class="contact-link" target="_blank" rel="noopener noreferrer">
+                    <span>🎨</span> Dribbble
+                </a>
+            </div>
+        </article>
+    </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer role="contentinfo">
+    <p>&copy; <time datetime="2024">2024</time> <strong>Sumit Tiwari</strong>. All rights reserved.</p>
+    <p>
+        <small>
+            Designed & Developed with <span style="color: var(--accent);">❤️</span> 
+            | Advanced HTML5, CSS3 & JavaScript
+        </small>
+    </p>
+    <address>
+        <p>
+            Based in India | Available for Remote & On-Site Opportunities
+        </p>
+    </address>
+</footer>
+
+<script>
+    // Smooth scroll enhancement
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+
+    // Add animation on scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.animation = 'slideInUp 0.8s ease forwards';
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('section, article').forEach(element => {
+        observer.observe(element);
+    });
+
+    // Dark mode toggle capability
+    const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)');
+    if (prefersDarkMode.matches) {
+        document.body.style.filter = 'invert(0)';
+    }
+</script>
+
+</body>
+</html>
