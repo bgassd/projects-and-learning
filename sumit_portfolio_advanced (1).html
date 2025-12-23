@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sumit Tiwari - Animated Cartoon Portfolio">
+    <title>Sumit Tiwari - Animated Cartoon Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #FF6B9D;
+            --secondary: #C44569;
+            --accent1: #FFA502;
+            --accent2: #6BCB77;
+            --accent3: #4D96FF;
+            --dark: #1a1a2e;
+            --light: #f0f0f0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', 'Trebuchet MS', cursive, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: var(--dark);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255, 107, 157, 0.3) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 8s ease-in-out infinite;
+            top: 10%;
+            left: -100px;
+            z-index: 0;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, rgba(107, 203, 119, 0.3) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 10s ease-in-out infinite reverse;
+            bottom: 10%;
+            right: -80px;
+            z-index: 0;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(30px, 30px) rotate(10deg); }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-5deg); }
+            75% { transform: rotate(5deg); }
+        }
+
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-100px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(100px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes popIn {
+            0% { opacity: 0; transform: scale(0); }
+            50% { transform: scale(1.2); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        /* HEADER */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: linear-gradient(90deg, #FF6B9D 0%, #C44569 100%);
+            padding: 1rem 2rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            border-bottom: 5px solid var(--accent1);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h1 {
+            font-size: 2.5rem;
+            color: white;
+            text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.3);
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.5);
+            transform: scale(1.15) rotate(2deg);
+        }
+
+        /* HERO SECTION */
+        section#hero {
+            margin-top: 100px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .hero-text {
+            animation: slideInLeft 1s ease;
+        }
+
+        .hero-text h1 {
+            font-size: 4rem;
+            color: white;
+            text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.3);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero-text h2 {
+            font-size: 2rem;
+            color: var(--accent1);
+            text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
+            margin-bottom: 1.5rem;
+            animation: wiggle 2s ease-in-out infinite;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            color: white;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .cartoon-btn {
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 6px 0 rgba(0, 0, 0, 0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.2);
+            font-family: 'Comic Sans MS', cursive;
+            transform-origin: center;
+        }
+
+        .cartoon-btn-primary {
+            background: var(--accent2);
+            color: white;
+            text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        .cartoon-btn-primary:hover {
+            transform: scale(1.1) rotate(-2deg) translateY(-3px);
+            box-shadow: 0 10px 0 rgba(0, 0, 0, 0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .cartoon-btn-secondary {
+            background: var(--accent3);
+            color: white;
+            text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
+            border: 4px dashed white;
+        }
+
+        .cartoon-btn-secondary:hover {
+            transform: scale(1.1) rotate(2deg) translateY(-3px);
+            box-shadow: 0 10px 0 rgba(0, 0, 0, 0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-graphic {
+            animation: slideInRight 1s ease;
+            perspective: 1000px;
+        }
+
+        .character {
+            width: 300px;
+            height: 400px;
+            background: linear-gradient(135deg, var(--accent1) 0%, var(--accent2) 100%);
+            border-radius: 100px 100px 80px 80px;
+            margin: 0 auto;
+            position: relative;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            animation: bounce 3s ease-in-out infinite;
+            border: 5px solid white;
+        }
+
+        .head {
+            width: 150px;
+            height: 150px;
+            background: #FFDBAC;
+            border-radius: 50%;
+            margin: 20px auto;
+            position: relative;
+            border: 4px solid white;
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .eyes {
+            display: flex;
+            justify-content: space-around;
+            padding: 50px 30px;
+            gap: 20px;
+        }
+
+        .eye {
+            width: 25px;
+            height: 35px;
+            background: white;
+            border-radius: 50%;
+            position: relative;
+            border: 3px solid var(--dark);
+            overflow: hidden;
+        }
+
+        .pupil {
+            width: 12px;
+            height: 12px;
+            background: var(--dark);
+            border-radius: 50%;
+            position: absolute;
+            top: 8px;
+            left: 6px;
+            animation: look 3s ease-in-out infinite;
+        }
+
+        @keyframes look {
+            0%, 100% { transform: translate(0, 0); }
+            25% { transform: translate(3px, -2px); }
+            50% { transform: translate(-3px, 3px); }
+            75% { transform: translate(3px, -3px); }
+        }
+
+        .mouth {
+            width: 50px;
+            height: 30px;
+            background: #FF6B9D;
+            border-radius: 0 0 50px 50px;
+            margin: 0 auto;
+            border: 3px solid var(--dark);
+            animation: wiggle 2s ease-in-out infinite;
+            margin-top: -30px;
+        }
+
+        .body {
+            width: 120px;
+            height: 150px;
+            background: var(--accent3);
+            border-radius: 30px;
+            margin: 10px auto;
+            position: relative;
+            border: 4px solid white;
+        }
+
+        .arms {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            gap: 100px;
+        }
+
+        .arm {
+            width: 40px;
+            height: 100px;
+            background: #FFDBAC;
+            border-radius: 20px;
+            border: 3px solid white;
+            animation: wave 1s ease-in-out infinite;
+        }
+
+        .arm:last-child {
+            animation: wave 1s ease-in-out infinite reverse;
+        }
+
+        @keyframes wave {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(15deg); }
+        }
+
+        /* MAIN CONTENT */
+        main {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        section {
+            padding: 5rem 3rem;
+            margin: 3rem 0;
+            border-radius: 40px;
+            background: white;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            border: 5px dashed var(--primary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        section::before {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, var(--accent1) 0%, transparent 70%);
+            opacity: 0.2;
+            border-radius: 50%;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        section h2 {
+            font-size: 3.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: var(--primary);
+            text-shadow: 3px 3px 0 var(--secondary);
+            animation: popIn 0.8s ease;
+        }
+
+        section h3 {
+            font-size: 1.8rem;
+            color: var(--secondary);
+            text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+            margin-bottom: 1.5rem;
+        }
+
+        /* ABOUT SECTION */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+
+        .about-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: linear-gradient(135deg, var(--accent3) 0%, var(--accent2) 100%);
+            padding: 2rem;
+            border-radius: 25px;
+            border: 4px solid white;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            color: white;
+            text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .card:hover {
+            transform: scale(1.1) rotate(3deg);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .card strong {
+            font-size: 1.3rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* SKILLS SECTION */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background: linear-gradient(135deg, var(--accent1) 0%, var(--primary) 100%);
+            padding: 2.5rem;
+            border-radius: 30px;
+            border: 4px solid white;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            text-align: center;
+            position: relative;
+        }
+
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 50%;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-15px) rotate(-2deg);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        .skill-emoji {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            animation: spin 4s linear infinite;
+        }
+
+        .skill-card h4 {
+            font-size: 1.5rem;
+            color: white;
+            text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
+            margin-bottom: 1rem;
+        }
+
+        .skill-items {
+            color: white;
+            text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        /* PROJECTS SECTION */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .project-card {
+            background: linear-gradient(135deg, #FFE66D 0%, #95E1D3 100%);
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+            border: 5px solid white;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .project-card::before {
+            content: '⭐';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            font-size: 60px;
+            animation: spin 4s linear infinite;
+            z-index: 1;
+        }
+
+        .project-card:hover {
+            transform: translateY(-20px) rotate(2deg) scale(1.05);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-content {
+            padding: 2.5rem;
+        }
+
+        .project-content h4 {
+            font-size: 1.5rem;
+            color: var(--dark);
+            text-shadow: 2px 2px 0 rgba(255, 255, 255, 0.5);
+            margin-bottom: 1rem;
+        }
+
+        .project-content p {
+            color: var(--dark);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem;
+            margin-bottom: 1rem;
+        }
+
+        .tech-tag {
+            background: white;
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            border: 2px solid var(--primary);
+        }
+
+        .project-link {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: white;
+            border-radius: 20px;
+            border: 2px solid var(--dark);
+            transition: all 0.3s ease;
+        }
+
+        .project-link:hover {
+            transform: scale(1.15) rotate(-3deg);
+        }
+
+        /* EXPERTISE SECTION */
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .expertise-item {
+            background: linear-gradient(135deg, var(--accent2) 0%, var(--primary) 100%);
+            padding: 2rem;
+            border-radius: 25px;
+            border: 4px solid white;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            color: white;
+            text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        .expertise-item:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        .expertise-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        .expertise-item h4 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .expertise-item p {
+            font-size: 0.95rem;
+        }
+
+        /* TOOLS SECTION */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .tool-item {
+            background: linear-gradient(135deg, var(--accent3) 0%, #6BCB77 100%);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 3px solid white;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            color: white;
+            text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .tool-item:hover {
+            transform: scale(1.2) rotate(-5deg);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .tool-emoji {
+            font-size: 3rem;
+            margin-bottom: 0.8rem;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        .tool-name {
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        /* CONTACT SECTION */
+        .contact-container {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-container p {
+            font-size: 1.2rem;
+            color: var(--dark);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .contact-btn {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent1) 0%, var(--accent2) 100%);
+            border: 4px solid white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            text-decoration: none;
+        }
+
+        .contact-btn:hover {
+            transform: scale(1.2) rotate(20deg);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            border-top: 5px solid var(--primary);
+            position: relative;
+            z-index: 1;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+            font-size: 1rem;
+            text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            nav h1 {
+                font-size: 1.8rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-text h2 {
+                font-size: 1.5rem;
+            }
+
+            .character {
+                width: 200px;
+                height: 280px;
+            }
+
+            section {
+                padding: 3rem 1.5rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid, .projects-grid, .expertise-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .cartoon-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header role="banner">
+    <nav aria-label="Main Navigation">
+        <h1>🎨 Sumit Tiwari</h1>
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- HERO SECTION -->
+<section id="hero">
+    <div class="hero-container">
+        <div class="hero-text">
+            <h1>Hi! I'm Sumit</h1>
+            <h2>🚀 Multi-Skilled Creative!</h2>
+            <p>
+                Expert in HR Analytics 📊 | Finance 💰 | Digital Marketing 📱 | 
+                Web Development 💻 | Data Analytics 📈 | Automation ⚙️ | Project Management 📋
+            </p>
+            <div class="hero-buttons">
+                <a href="#projects" class="cartoon-btn cartoon-btn-primary">🎯 View My Work</a>
+                <a href="#contact" class="cartoon-btn cartoon-btn-secondary">💬 Let's Talk!</a>
+            </div>
+        </div>
+        <div class="hero-graphic">
+            <div class="character">
+                <div class="head">
+                    <div class="eyes">
+                        <div class="eye"><div class="pupil"></div></div>
+                        <div class="eye"><div class="pupil"></div></div>
+                    </div>
+                    <div class="mouth"></div>
+                </div>
+                <div class="body">
+                    <div class="arms">
+                        <div class="arm"></div>
+                        <div class="arm"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT SECTION -->
+<section id="about">
+    <h2>📖 About Me</h2>
+    <div class="about-grid">
+        <div class="about-text">
+            <p>
+                🌟 <strong>Welcome!</strong> I'm a super creative professional with amazing skills 
+                across HR analytics, finance, digital marketing, web development, and data science!
+            </p>
+            <p>
+                💡 With <strong>7+ years</strong> of experience, I've helped companies solve 
+                tough problems and achieve their goals using smart technology and data!
+            </p>
+            <p>
+                🎯 I love creating beautiful websites, analyzing data to find insights, 
+                and helping businesses grow with amazing solutions!
+            </p>
+        </div>
+        <div class="about-cards">
+            <div class="card">
+                <strong>👥 HR Expert</strong>
+                <p>Workforce planning & talent analytics</p>
+            </div>
+            <div class="card">
+                <strong>💰 Finance Pro</strong>
+                <p>Budgeting & financial analysis</p>
+            </div>
+            <div class="card">
+                <strong>📱 Marketing Star</strong>
+                <p>Digital campaigns & social media</p>
+            </div>
+            <div class="card">
+                <strong>💻 Web Wizard</strong>
+                <p>Full-stack development magic</p>
+            </div>
+            <div class="card">
+                <strong>📊 Data Genius</strong>
+                <p>Analytics & visualization</p>
+            </div>
+            <div class="card">
+                <strong>⚙️ Automation Master</strong>
+                <p>Process optimization</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SKILLS SECTION -->
+<section id="skills">
+    <h2>⭐ My Amazing Skills</h2>
+    <div class="skills-grid">
+        <div class="skill-card">
+            <div class="skill-emoji">👥</div>
+            <h4>HR Analytics</h4>
+            <div class="skill-items">
+                ✨ Workforce Planning<br>
+                ✨ Talent Metrics<br>
+                ✨ Team Development
+            </div>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-emoji">💰</div>
+            <h4>Finance</h4>
+            <div class="skill-items">
+                ✨ Budgeting<br>
+                ✨ Forecasting<br>
+                ✨ Financial Analysis
+            </div>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-emoji">📱</div>
+            <h4>Digital Marketing</h4>
+            <div class="skill-items">
+                ✨ SEO & SEM<br>
+                ✨ Content Marketing<br>
+                ✨ Social Media Magic
+            </div>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-emoji">💻</div>
+            <h4>Web Development</h4>
+            <div class="skill-items">
+                ✨ React & JavaScript<br>
+                ✨ Full Stack<br>
+                ✨ Responsive Design
+            </div>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-emoji">📊</div>
+            <h4>Data Analytics</h4>
+            <div class="skill-items">
+                ✨ Data Visualization<br>
+                ✨ Python & SQL<br>
+                ✨ Business Intelligence
+            </div>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-emoji">⚙️</div>
+            <h4>Automation</h4>
+            <div class="skill-items">
+                ✨ Process Automation<br>
+                ✨ RPA Solutions<br>
+                ✨ Workflow Optimization
+            </div>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-emoji">📋</div>
+            <h4>Project Mgmt</h4>
+            <div class="skill-items">
+                ✨ Agile/Scrum<br>
+                ✨ Resource Planning<br>
+                ✨ Team Leadership
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROJECTS SECTION -->
+<section id="projects">
+    <h2>🎬 My Awesome Projects</h2>
+    <div class="projects-grid">
+        <div class="project-card">
+            <div class="project-content">
+                <h4>📊 HR Analytics Dashboard</h4>
+                <p>A super cool platform that tracks employee data and helps companies make smart decisions about their team!</p>
+                <div class="tech-tags">
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Tableau</span>
+                </div>
+                <a href="#" class="project-link">See More ✨</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-content">
+                <h4>💰 Finance Management</h4>
+                <p>Amazing tool for budgeting and financial forecasting that makes money management super easy and fun!</p>
+                <div class="tech-tags">
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">Vue.js</span>
+                    <span class="tech-tag">MongoDB</span>
+                </div>
+                <a href="#" class="project-link">See More ✨</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-content">
+                <h4>📱 Marketing Suite</h4>
+                <p>Complete digital marketing platform with email automation and social media scheduling powers!</p>
+                <div class="tech-tags">
+                    <span class="tech-tag">Next.js</span>
+                    <span class="tech-tag">Firebase</span>
+                    <span class="tech-tag">JavaScript</span>
+                </div>
+                <a href="#" class="project-link">See More ✨</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-content">
+                <h4>📈 Data Analytics</h4>
+                <p>Smart business intelligence platform with machine learning to predict future trends and insights!</p>
+                <div class="tech-tags">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">TensorFlow</span>
+                    <span class="tech-tag">Power BI</span>
+                </div>
+                <a href="#" class="project-link">See More ✨</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-content">
+                <h4>⚙️ Process Automation</h4>
+                <p>Powerful automation engine that reduces manual work by 80% and saves time for what matters!</p>
+                <div class="tech-tags">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">UiPath</span>
+                    <span class="tech-tag">AWS</span>
+                </div>
+                <a href="#" class="project-link">See More ✨</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-content">
+                <h4>📋 Project Portal</h4>
+                <p>Collaborative team workspace where everyone can work together on projects with awesome tools!</p>
+                <div class="tech-tags">
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">MongoDB</span>
+                </div>
+                <a href="#" class="project-link">See More ✨</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- EXPERTISE SECTION -->
+<section id="expertise">
+    <h2>🏆 My Superpowers</h2>
+    <div class="expertise-grid">
+        <div class="expertise-item">
+            <div class="expertise-icon">👥</div>
+            <h4>HR Analytics</h4>
+            <p>Workforce insights & talent strategy</p>
+        </div>
+        <div class="expertise-item">
+            <div class="expertise-icon">💰</div>
+            <h4>Finance</h4>
+            <p>Financial planning & analysis</p>
+        </div>
+        <div class="expertise-item">
+            <div class="expertise-icon">📱</div>
+            <h4>Marketing</h4>
+            <p>Digital campaigns & growth</p>
+        </div>
+        <div class="expertise-item">
+            <div class="expertise-icon">💻</div>
+            <h4>Web Dev</h4>
+            <p>Full-stack applications</p>
+        </div>
+        <div class="expertise-item">
+            <div class="expertise-icon">📊</div>
+            <h4>Data Analytics</h4>
+            <p>Insights & visualization</p>
+        </div>
+        <div class="expertise-item">
+            <div class="expertise-icon">⚙️</div>
+            <h4>Automation</h4>
+            <p>Process optimization</p>
+        </div>
+        <div class="expertise-item">
+            <div class="expertise-icon">📈</div>
+            <h4>Project Mgmt</h4>
+            <p>Agile team leadership</p>
+        </div>
+        <div class="expertise-item">
+            <div class="expertise-icon">🎯</div>
+            <h4>Strategy</h4>
+            <p>Business growth plans</p>
+        </div>
+    </div>
+</section>
+
+<!-- TOOLS SECTION -->
+<section id="tools">
+    <h2>🛠️ My Awesome Tools</h2>
+    <div class="tools-grid">
+        <div class="tool-item">
+            <div class="tool-emoji">🐍</div>
+            <div class="tool-name">Python</div>
+        </div>
+        <div class="tool-item">
+            <div class="tool-emoji">💛</div>
+            <div class="tool-name">JavaScript</div>
+        </div>
+        <div class="tool-item">
+            <div class="tool-emoji">⚛️</div>
+            <div class="tool-name">React</div>
+        </div>
+        <div class="tool-item">
+            <div class="tool-emoji">📊</div>
+            <div class="tool-name">Tableau</div>
+        </div>
+        <div class="tool-item">
+            <div class="tool-emoji">🗄️</div>
+            <div class="tool-name">SQL</div>
+        </div>
+        <div class="tool-item">
+            <div class="tool-emoji">🌐</div>
+            <div class="tool-name">Node.js</div>
+        </div>
+        <div class="tool-item">
+            <div class="tool-emoji">☁️</div>
+            <div class="tool-name">AWS</div>
+        </div>
+        <div class="tool-item">
+            <div class="tool-emoji">🐳</div>
+            <div class="tool-name">Docker</div>
+        </div>
+        <div class="tool-item">
+            <div class="tool-emoji">💼</div>
+            <div class="tool-name">Salesforce</div>
+        </div>
+        <div class="tool-item">
+            <div class="tool-emoji">📋</div>
+            <div class="tool-name">Jira</div>
+        </div>
+        <div class="tool-item">
+            <div class="tool-emoji">💼</div>
+            <div class="tool-name">HubSpot</div>
+        </div>
+        <div class="tool-item">
+            <div class="tool-emoji">🎨</div>
+            <div class="tool-name">Figma</div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="contact">
+    <h2>💬 Let's Connect!</h2>
+    <div class="contact-container">
+        <p>Got an amazing project? Want to chat? Let's work together! 🌟</p>
+        <p><strong>📧 Email:</strong> sumit@example.com | <strong>📱 Phone:</strong> +91 9876543210</p>
+        <div class="contact-links">
+            <a href="mailto:sumit@example.com" class="contact-btn" title="Email">📧</a>
+            <a href="https://linkedin.com" class="contact-btn" title="LinkedIn">💼</a>
+            <a href="https://github.com" class="contact-btn" title="GitHub">💻</a>
+            <a href="https://twitter.com" class="contact-btn" title="Twitter">𝕏</a>
+            <a href="https://instagram.com" class="contact-btn" title="Instagram">📸</a>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer role="contentinfo">
+    <p>🎨 © 2024 <strong>Sumit Tiwari</strong> - All Rights Reserved! 🎨</p>
+    <p>💫 Made with ❤️ and lots of creativity! 💫</p>
+</footer>
+
+<script>
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+
+    // Animation on scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.animation = 'popIn 0.6s ease forwards';
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('section, .card, .project-card, .skill-card').forEach(element => {
+        observer.observe(element);
+    });
+</script>
+
+</body>
+</html>
